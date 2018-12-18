@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Products Details</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="content">
+		<h1 class="header">WSI - Porducts</h1>
+		<ul id="img-list">
+			
+		</ul>
+	</div>
+	<div id="thumbnail-overlay" class="overlay hide">
+		<div class="overlay-content">
+			<div class="slideshow-container" id="slideshow-container">
+				<a class="prev" href="javascript:void(0)" >&#10094;</a>
+				<a class="next" href="javascript:void(0)" >&#10095;</a>
+			</div>
+			<br>				
+		</div>
+	</div>	
+	<script src="script.js"></script>
+	<script type="text/javascript">
+		function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        if(slides.length)slides[slideIndex-1].style.display = "block";  
+        if(dots.length)dots[slideIndex-1].className += " active";
+      }
+	</script>
+	<!-- <script type="text/javascript" src="/details.json"></script> -->
+</body>
+</html>
